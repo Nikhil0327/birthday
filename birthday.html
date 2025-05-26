@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    /* Body styling with animated background */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(270deg, #ffecd2, #fcb69f);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Main card */
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 400px;
+      z-index: 2;
+      animation: popIn 0.8s ease;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .card h1 {
+      font-size: 2.5em;
+      font-family: 'Pacifico', cursive;
+      color: #ff6f61;
+      margin-bottom: 15px;
+    }
+
+    .photo {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 5px solid #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    .message {
+      font-size: 1.1em;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .from {
+      font-style: italic;
+      color: #888;
+      font-size: 1em;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff6f61;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ff6f61;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff4e42;
+      box-shadow: 0 0 20px #ff4e42;
+    }
+
+    /* Heart animation */
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatHearts 6s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        top: -10%;
+        left: calc(100% * var(--i));
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        top: 110%;
+        left: calc(100% * var(--i) + 30px);
+        opacity: 0;
+      }
+    }
+
+    .heart:nth-child(1) { --i: 0.1; animation-delay: 0s; }
+    .heart:nth-child(2) { --i: 0.1; animation-delay: 1s; }
+    .heart:nth-child(3) { --i: 0.2; animation-delay: 2s; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🎉 Happiest Birthday, My Dear Chinnii! 🎉</h1>
+    <img src="Snapchat-838018653.jpg" alt="Her Photo" class="photo" />
+    <p class="message">
+       A small note for u 💕<br>
+       🎂🎈
+    </p>
+    <a href="letter.html" class="btn" target="_blank">💌 A Little Surprise</a>
+  </div>
+
+  <div class="hearts">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
+
+</body>
+</html>

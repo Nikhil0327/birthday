@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  // Simple password protection
+  var password = "chinni"; // <-- change this to your secret password
+
+  var entered = prompt("Enter the password to view this page:");
+  if (entered !== password) {
+    document.body.innerHTML = "<h2 style='color:red; text-align:center; margin-top:50px;'>❌ Access Denied</h2>";
+    throw new Error("Wrong password");
+  }
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Happy Birthday!</title>
@@ -181,3 +191,4 @@
 
 </body>
 </html>
+
